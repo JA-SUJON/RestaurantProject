@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content />
+        <meta name="author" content />
+        <title>{% block title %}{% endblock %}</title>
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        {% block css %} 
+
+        {% endblock %}
+     
+    </head>
+    <body>
+        <div id="layoutDefault">
+            <div id="layoutDefault_content">
+                <main>
+                   {% include 'mastering/navbar.html' %} 
+
+                    {% block header %}
+                    {% endblock %}
+
+                    {% block content %}
+                    {% endblock %}
+                </main>
+            </div>
+
+            <div id="layoutDefault_footer">
+                {% include 'mastering/footer.html' %}
+            </div>
+        </div>
+        <script src="../../code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="../../stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="js/sb-customizer.js"></script>
+        {% block js %}
+
+        {% endblock %}
+    </body>
+</html>
